@@ -1,8 +1,8 @@
 {
-  "name": "rob-and-caitlin-wedding",
+  "name": "robert-and-caitlin-wedding",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://MichelleJBryant.github.io/robert-and-caitlin-wedding",
+  "homepage": "http://michellejbryant.github.io/robert-and-caitlin-wedding",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
