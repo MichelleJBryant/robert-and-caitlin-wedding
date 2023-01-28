@@ -17,6 +17,8 @@ import {
 import Carousel from "../components/Carousel";
 import fire from "../images/fire.png";
 import Leaves from '../images/leaves.png'
+import lavender from "../images/lavenderbg.png"
+import greenBackground from "../images/greenbackground.png"
 const data = [
   {
     src: "https://images.unsplash.com/photo-1502657877623-f66bf489d236",
@@ -42,9 +44,43 @@ const data = [
 export default function Travel() {
   return (
     <Container
-      sx={{ display: "flex", flexDirection: "column", alignItems: "center", margin:0, backgroundColor: 'secondary.light', }}
+      sx={{ display: "flex", flexDirection: "column", alignItems: "center", margin:0 }}
       // backgroundColor="secondary.light"
     >
+     <Box
+        height={400}
+        width={"100%"}
+        // zIndex={-1}
+        top={0}
+        right={0}
+        position="absolute"
+        // backgroundBlendMode="screen"
+        // top={0}
+        sx={{
+          backgroundImage: `url(${greenBackground})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          // transform: "rotate(180deg)",
+          opacity: 0.5,
+        }}
+      ></Box>
+      <Box
+        height={500}
+        width={"100%"}
+        zIndex={1}
+        top={0}
+        right={0}
+        position="absolute"
+        // backgroundBlendMode="screen"
+        // top={0}
+        sx={{
+          backgroundImage: `url(${lavender})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          transform: "rotate(180deg)",
+          opacity: 0.8,
+        }}
+      ></Box>
         <img src={fire} height={150} />
       <Typography variant="h1">Stay + Do</Typography>
       <Typography variant="body1" sx={{py: 4}}>

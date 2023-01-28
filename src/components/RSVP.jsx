@@ -5,10 +5,11 @@ import { ChevronRight } from "@mui/icons-material";
 const RSVP = () => {
   return (
     <Box
-      onClick={() => window.open("www.google.com")}
+      onClick={() => window.open("https://www.google.com")}
       padding={1}
       borderColor="secondary.light"
       borderRadius={4}
+      // border={1}
     >
       <Box display="flex" flexDirection="row">
         <Box

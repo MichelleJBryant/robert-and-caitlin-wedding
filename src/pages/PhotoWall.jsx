@@ -1,6 +1,14 @@
-import * as React from "react";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
+// import * as React from "react";
+// import ImageList from "@mui/material/ImageList";
+// import ImageListItem from "@mui/material/ImageListItem";
+// import { ImageListItemBar } from "@mui/material";
+import * as React from 'react';
+import ImageList from '@mui/material/ImageList';
+import ImageListItem from '@mui/material/ImageListItem';
+import ImageListItemBar from '@mui/material/ImageListItemBar';
+import IconButton from '@mui/material/IconButton';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import { ParallaxBanner } from 'react-scroll-parallax';
 import { Container, Typography, Box } from "@mui/material";
 import image1 from "../images/image1.jpg";
 import image2 from "../images/image2.jpg";
@@ -14,169 +22,317 @@ import image10 from "../images/image10.jpg";
 import image11 from "../images/image11.jpg";
 import image12 from "../images/image12.jpg";
 import image13 from "../images/image13.jpg";
-import { Fade } from "react-reveal";
-import { useTrail, a } from "@react-spring/web";
-import { useState } from "react";
+import Fade from 'react-reveal';
+export const Text = () => {
+  return (
+ 
+      <Box
+    
+        position="absolute"
+// top={0}
+my={2}
+        display="flex"
+        flexDirection={"column"}
+        justifyContent="space-around"
+        alignItems="center"
+        width="100%"
+        height="200%"
+        zIndex={100}
+        sx={{
+                background:
+                  'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, ' +
+                  'rgba(0,0,0,0.3) 30%, rgba(0,0,0,0) 100%)',
+              }}
+        // sx={{
+        //   mixBlendMode: "overlay",
+        // }}
+      >
+       <Fade>
+          <Typography
+            variant="h3"
+            fontSize={64}
+            color="neutral.main"
+            // sx={{ position: "absolute", top: 0, zIndex: 10 }}
+          >
+            Ten
+          </Typography>
+          <Typography
+            variant="h3"
+            fontSize={64}
+            color="neutral.main"
+            // sx={{ position: "absolute", top: 0, zIndex: 10 }}
+          >
+            years
+          </Typography>
+          <Typography
+            variant="h3"
+            fontSize={64}
+            color="neutral.main"
+            // sx={{ position: "absolute", top: 0, zIndex: 10 }}
+          >
+            in the
+          </Typography>
+          <Typography
+            variant="h3"
+            fontSize={64}
+            color="neutral.main"
+            sx={{ backgroundBlendMode: "screen" }}
+            // sx={{ position: "absolute", top: 0, zIndex: 10 }}
+          >
+            making
+          </Typography>
+          </Fade>
+      </Box>
+  
+  )
+  };
 
-function srcset(image, size, rows = 1, cols = 1) {
+//  function photowall() {
+//     return (
+//       <ImageList
+//         sx={{
+//           width: '100%',
+//           height: '100%',
+//           // Promote the list into its own layer in Chrome. This costs memory, but helps keeping high FPS.
+//           transform: 'translateZ(0)',
+//         }}
+//         rowHeight={200}
+//         gap={1}
+//       >
+//         {itemData.map((item) => {
+//           const cols = item.featured ? 2 : 1;
+//           const rows = item.featured ? 2 : 1;
+  
+//           return (
+//             <ImageListItem key={item.img} cols={cols} rows={rows}>
+//               <img
+//                 {...srcset(item.img, 250, 200, rows, cols)}
+//                 alt={item.title}
+//                 loading="lazy"
+//               />
+//               <ImageListItemBar
+//                 sx={{
+//                   background:
+//                     'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
+//                     'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+//                 }}
+//                 title={item.title}
+//                 position="top"
+//                 actionPosition="left"
+//               />
+//             </ImageListItem>
+//           );
+//         })}
+//       </ImageList>
+//     );
+//   }
+
+//   return (
+//     <Container>
+//     {photowall()}
+//       {/* <ParallaxBanner layers={[title, photowall]} style={{ height: "100vh" }} /> */}
+//     </Container>
+//   );
+// }
+
+// const itemData = [
+//   {
+//     img: image1,
+//     title: "Breakfast",
+//     rows: 2,
+//     cols: 2,
+//   },
+//   {
+//     img: image2,
+//     title: "Burger",
+//   },
+//   {
+//     img: image3,
+//     title: "Camera",
+//   },
+//   {
+//     img: image4,
+//     title: "Coffee",
+//     cols: 2,
+//   },
+//   {
+//     img: image5,
+//     title: "Hats",
+//     cols: 2,
+//   },
+//   {
+//     img: image6,
+//     title: "Honey",
+//     author: "@arwinneil",
+//     rows: 2,
+//     cols: 2,
+//   },
+//   {
+//     img: image7,
+//     title: "Basketball",
+//   },
+//   {
+//     img: image8,
+//     title: "Fern",
+//   },
+//   {
+//     img: image10,
+//     title: "Mushrooms",
+//     rows: 2,
+//     cols: 2,
+//   },
+//   {
+//     img: image11,
+//     title: "Tomato basil",
+//   },
+//   {
+//     img: image12,
+//     title: "Sea star",
+//   },
+//   {
+//     img: image13,
+//     title: "Bike",
+//     cols: 2,
+//   },
+// ];
+
+
+function srcset(image, width, height, rows = 1, cols = 1) {
   return {
-    src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
-    srcSet: `${image}?w=${size * cols}&h=${
-      size * rows
+    src: `${image}?w=${width * cols}&h=${height * rows}&fit=crop&auto=format`,
+    srcSet: `${image}?w=${width * cols}&h=${
+      height * rows
     }&fit=crop&auto=format&dpr=2 2x`,
   };
 }
 
-export default function QuiltedImageList() {
-  const [open, set] = useState(true);
-
-  const Trail = ({ open, children }) => {
-    const items = React.Children.toArray(children);
-    const trail = useTrail(items.length, {
-      config: { mass: 5, tension: 2000, friction: 200 },
-      opacity: open ? 1 : 0,
-      x: open ? 0 : 20,
-      height: open ? 110 : 0,
-      from: { opacity: 0, x: 20, height: 0 },
-    });
-    return (
-      <div>
-        {trail.map(({ height, ...style }, index) => (
-          <a.div key={index}>
-            <a.div style={{ height }}>{items[index]}</a.div>
-          </a.div>
-        ))}
-      </div>
-    );
-  };
+export const CustomImageList = () => {
   return (
-    <Container sx={{ position: "relative", height: "100vh" }}>
-      <Box
-        // backgroundColor="primary.light"
-        height="100%"
-        position="absolute"
-        // left={0}
-      justifyContent="center"
-      alignItems="center"
-        width="100%"
-      
-        zIndex={1}
-        sx={{
-          mixBlendMode: "overlay",
-        }}
-      >
-        <Typography
-          variant="h3"
-          color="secondary.light"
-          // sx={{ position: "absolute", top: 0, zIndex: 10 }}
-        >
-          Ten
-        </Typography>
-        <Typography
-          variant="h3"
-          color="neutral.main"
-          // sx={{ position: "absolute", top: 0, zIndex: 10 }}
-        >
-          years
-        </Typography>
-        <Typography
-          variant="h3"
-          color="neutral.main"
-          // sx={{ position: "absolute", top: 0, zIndex: 10 }}
-        >
-          in the
-        </Typography>
-        <Typography
-          variant="h3"
-          color="transparent"
-          sx={{ backgroundBlendMode: "screen", opacity: 0.5 }}
-          // sx={{ position: "absolute", top: 0, zIndex: 10 }}
-        >
-          making
-        </Typography>
-      </Box>
+<>
+    {Text()}
 
-      <ImageList
-        sx={{ width: "100%", height: 750,   mixBlendMode: "multiply", }}
-        variant="quilted"
-        cols={4}
-        rowHeight={120}
-      >
-        {itemData.map((item) => (
-          <ImageListItem
-            key={item.img}
-            cols={item.cols || 1}
-            rows={item.rows || 1}
-          >
+    <ImageList
+      sx={{
+        width: '100%',
+        height: '100%',
+        // Promote the list into its own layer in Chrome. This costs memory, but helps keeping high FPS.
+        // transform: 'translateZ(0)',
+      }}
+      rowHeight={200}
+      gap={1}
+    >
+    {/* {Text()} */}
+      {itemData.map((item) => {
+        const cols = item.featured ? 2 : 1;
+        const rows = item.featured ? 2 : 1;
+
+        return (
+        
+          <ImageListItem key={item.img} cols={cols} rows={rows}>
+          
             <img
-              {...srcset(item.img, 121, item.rows, item.cols)}
+              {...srcset(item.img, 250, 200, rows, cols)}
               alt={item.title}
               loading="lazy"
             />
+            {/* <ImageListItemBar
+              // sx={{
+              //   background:
+              //     'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
+              //     'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+              // }}
+              // title={item.title}
+              // position="top"
+        
+         
+            /> */}
+            {/* <Typography>Ten years in the making</Typography> */}
           </ImageListItem>
-        ))}
-      </ImageList>
-    </Container>
+        );
+      })}
+    </ImageList>
+ 
+    </>
   );
+}
+
+export default function PhotoWall() {
+  return (
+    <>
+      {/* {Text()} */}
+      {CustomImageList()}
+ 
+    {/* <ParallaxBanner
+    layers={[Text]}
+    style={{ height: "100%" }}
+  /> */}
+   </>
+  )
+
 }
 
 const itemData = [
   {
     img: image1,
-    title: "Breakfast",
-    rows: 2,
-    cols: 2,
+    title: 'Breakfast',
+    author: '@bkristastucchio',
+    featured: true,
   },
   {
     img: image2,
-    title: "Burger",
+    title: 'Burger',
+    author: '@rollelflex_graphy726',
   },
   {
     img: image3,
-    title: "Camera",
+    title: 'Camera',
+    author: '@helloimnik',
   },
   {
     img: image4,
-    title: "Coffee",
-    cols: 2,
+    title: 'Coffee',
+    author: '@nolanissac',
   },
   {
     img: image5,
-    title: "Hats",
-    cols: 2,
+    title: 'Hats',
+    author: '@hjrc33',
   },
   {
     img: image6,
-    title: "Honey",
-    author: "@arwinneil",
-    rows: 2,
-    cols: 2,
+    title: 'Honey',
+    author: '@arwinneil',
+    featured: true,
   },
   {
     img: image7,
-    title: "Basketball",
+    title: 'Basketball',
+    author: '@tjdragotta',
   },
   {
     img: image8,
-    title: "Fern",
-  },
-  {
-    img: image10,
-    title: "Mushrooms",
-    rows: 2,
-    cols: 2,
+    title: 'Fern',
+    author: '@katie_wasserman',
   },
   {
     img: image11,
-    title: "Tomato basil",
+    title: 'Mushrooms',
+    author: '@silverdalex',
+  },
+  {
+    img: image10,
+    title: 'Tomato basil',
+    author: '@shelleypauls',
   },
   {
     img: image12,
-    title: "Sea star",
+    title: 'Sea star',
+    author: '@peterlaster',
+    featured: true
   },
-  {
-    img: image13,
-    title: "Bike",
-    cols: 2,
-  },
+  // {
+  //   img: image13,
+  //   title: 'Bike',
+  //   author: '@southside_customs',
+  // },
 ];

@@ -10,6 +10,8 @@ import { timelineContentClasses } from "@mui/lab/TimelineContent";
 // import LaptopMacIcon from "@mui/icons-material/LaptopMac";
 import HotelIcon from "@mui/icons-material/Hotel";
 import RepeatIcon from "@mui/icons-material/Repeat";
+import creamBackground from "../images/creambackground.jpg";
+import brownCircle from '../images/browncircle.png';
 import {
   NightlifeRounded,
   AirportShuttleRounded,
@@ -69,7 +71,9 @@ const Itinerary = () => {
         alignItems="center"
         flexDirection={"row"}
       >
-        <Typography variant="h1">On the day</Typography>
+        <Typography variant="h1" fontSize={64}>
+          On the day
+        </Typography>
         <img src={cow} width={150} />
       </Box>
 
@@ -77,7 +81,7 @@ const Itinerary = () => {
         sx={{
           // display: 'flex',
           // flexDirection: 'column',
-          // justifyContent: 'space-between',
+          // justifyContent: 'flex-start',
           [`& .${timelineContentClasses.root}`]: {
             flex: 100,
           },
@@ -87,8 +91,10 @@ const Itinerary = () => {
           <TimelineSection
             //  ref={parallax.ref}
             icon={<AirportShuttleRounded />}
-            title={"Bus pickup"}
-            text={"The bus will come and pick you up"}
+            title={"Pickup from bus stop"}
+            text={
+              "There is no parking at the venue. We are providing a shuttle bus pickup and drop off from either the Mantra or from Location B."
+            }
             time={"10:00pm"}
           />
 
@@ -110,7 +116,9 @@ const Itinerary = () => {
           <TimelineSection
             icon={<NightlightRounded />}
             title={"Reception"}
-            // text={"The ceremony"}
+            text={
+              "The reception will be held at the same venue as the cermenoy"
+            }
             time={"12:00pm"}
             colored
           />
@@ -122,9 +130,38 @@ const Itinerary = () => {
           />
         </Fade>
       </Timeline>
-      <Box display="flex" flexDirection="row" alignItems="center">
+      
+      <Box
+        display="flex"
+        py={6}
+        flexDirection="row"
+        alignItems="center"
+        justifyContent="center"
+      >
+      <Box
+        // height={400}
+        // width={"100%"}
+        zIndex={-1}
+        // // top={0}
+        // // right={0}
+        position="absolute"
+        left={0}
+        // opacity={0.5}
+        // // backgroundBlendMode="screen"
+        // // top={0}
+        sx={{
+          // backgroundImage: `url(${brownCircle})`,
+          // backgroundSize: "cover",
+          // backgroundRepeat: "no-repeat",
+          // transform: "rotate(90deg)",
+        
+          opacity: 0.5,
+        }}
+      ><img src={brownCircle} height={250}/></Box>
+      <Box sx={{mixBlendMode: 'multiply'}} padding={3}>
         <img src={boots} height={120} />
-        <Typography variant="h2" fontSize={32}>
+        </Box>
+        <Typography variant="h2" fontSize={48}>
           Don't forget your dancing boots!
         </Typography>
       </Box>

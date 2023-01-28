@@ -6,7 +6,7 @@ import { themeOptions } from "./components/theme";
 import PhotoWall from "./pages/PhotoWall";
 import ButtonFilled from "./components/Button";
 import SendIcon from "@mui/icons-material/Send";
-import { AppBar, Typography, Toolbar, Paper } from "@mui/material";
+import { AppBar, Typography, Box, Paper } from "@mui/material";
 import Travel from "./pages/Travel";
 import FAQ from "./pages/FAQ";
 import image9 from "./images/image9.jpg";
@@ -18,22 +18,24 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import Leaves from "./images/leaves.png";
 import Landing from "./pages/Landing";
 
+import creamBackground from './images/creambackground.jpg';
+
 const theme = createTheme(themeOptions);
 
 // backgroundImage: `url(${Leaves})`,
+// backgroundSize: "cover", backgroundImage: `url(${creamBackground})`, opacity: 0.3 
 function App() {
   return (
     <ParallaxProvider>
       <ThemeProvider theme={theme}>
         <Container
-          sx={{ marginBottom: "70px", padding: 0, backgroundSize: "cover" }}
+          sx={{ marginBottom: "70px", padding: 0,  }}
         >
-   
-    
-
+        {/* <Box zIndex={-1} height="100%" sx={{}}>
+        </Box> */}
           <Home />
           <Landing />
-      {/* <ParallaxBanner
+          {/* <ParallaxBanner
             style={{ height: "100vh" }}
             layers={[
               { image: img36, speed: -20 },
@@ -79,20 +81,21 @@ function App() {
           <Travel />
 
           <Paper
-         
-          elevaton={3}
+            // elevaton={3}
             sx={{
               border: "1px solid",
               borderColor: "secondary.light",
               display: "flex",
               alignItems: "center",
-              justifyContent: 'center',
+              justifyContent: "center",
+              left: 0,
+              right: 0,
               bottom: 0,
-              width: '100%',
+              flexGrow: 1, 
+              // width: "100%",
               position: "fixed",
               // left: 0,
               // right: 0,
-     
             }}
           >
             <ButtonFilled
@@ -103,6 +106,7 @@ function App() {
               RSVP
             </ButtonFilled>
           </Paper>
+     
         </Container>
       </ThemeProvider>
     </ParallaxProvider>

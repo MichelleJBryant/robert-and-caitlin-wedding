@@ -23,7 +23,7 @@ const TimelineSection = ({ icon, text, colored, title, time }) => {
   return (
     <TimelineItem>
       <TimelineOppositeContent
-        sx={{ m: "auto" }}
+        sx={{ my: "auto" }}
         // align="right"
         variant="body2"
         color="text.secondary"
@@ -39,11 +39,12 @@ const TimelineSection = ({ icon, text, colored, title, time }) => {
 
       <TimelineContent  sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 0}}>
         <Box sx={{ backgroundColor: colored && "secondary.light", padding: 3, }}>
-        <Typography variant={colored ? "h2" : "body2"}>
+        
+        <Typography py={1} variant={colored ? "h2" : "h3"} fontSize={!colored ? 18 : 48 }>
           {title}
         </Typography>
       
-        <Typography>{text}</Typography>
+        <Typography variant="body1" fontSize={12}>{text}</Typography>
         </Box>
       </TimelineContent>
     </TimelineItem>

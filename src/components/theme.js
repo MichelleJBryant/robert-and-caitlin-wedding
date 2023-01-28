@@ -56,7 +56,7 @@ export const themeOptions = {
     },
     body1: {
       fontFamily: Bellota,
-      fontSize: 14,
+      fontSize: 12,
       fontWeight: 300,
       letterSpacing: '.1rem',
     },
