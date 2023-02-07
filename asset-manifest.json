@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/robert-and-caitlin-wedding/static/css/main.35016927.css",
+    "main.css": "/robert-and-caitlin-wedding/static/css/main.f5ba0a31.css",
     "main.js": "/robert-and-caitlin-wedding/static/js/main.994e7c7d.js",
     "static/js/787.0e688827.chunk.js": "/robert-and-caitlin-wedding/static/js/787.0e688827.chunk.js",
     "static/media/coppersplash.png": "/robert-and-caitlin-wedding/static/media/coppersplash.d22cf82ab2c1764d4fd1.png",
@@ -47,12 +47,12 @@
     "static/media/lavenderbg.png": "/robert-and-caitlin-wedding/static/media/lavenderbg.a05ee3379e192655dc37.png",
     "static/media/image13.jpg": "/robert-and-caitlin-wedding/static/media/image13.d3411d65edf07000516d.jpg",
     "index.html": "/robert-and-caitlin-wedding/index.html",
-    "main.35016927.css.map": "/robert-and-caitlin-wedding/static/css/main.35016927.css.map",
+    "main.f5ba0a31.css.map": "/robert-and-caitlin-wedding/static/css/main.f5ba0a31.css.map",
     "main.994e7c7d.js.map": "/robert-and-caitlin-wedding/static/js/main.994e7c7d.js.map",
     "787.0e688827.chunk.js.map": "/robert-and-caitlin-wedding/static/js/787.0e688827.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.35016927.css",
+    "static/css/main.f5ba0a31.css",
     "static/js/main.994e7c7d.js"
   ]
 }
